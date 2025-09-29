@@ -1,21 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package poo.actividadTienda;
-/**
- *
- * @author Marlon Rojas Galindo
- */
 public class MainProductos {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        Producto<?> [] productos = new Producto<?>[4];
-        
-        productos [0] = new Libro(256, "Java Basico", 299, productos);
+        // Creamos un arreglo para almacenar productos
+        Producto<?>[] inventario = new Producto<?>[4];
+
+        inventario[0] = new Libro("Java Básico", 299.99, 350);
+        inventario[1] = new Electronico("Laptop ASUS", 15999.99, "2 años");
+        inventario[2] = new Libro("Patrones de Diseño", 499.50, 420);
+        inventario[3] = new Electronico("Smartphone Samsung", 10999.00, "1 año");
+
+        // Recorremos el arreglo y mostramos detalles
+        for (Producto<?> p : inventario) {
+            p.mostrarDetalles();
+        }
     }
-    
 }
