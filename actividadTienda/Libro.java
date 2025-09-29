@@ -1,40 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package poo.actividadTienda;
-
 /**
- *
- * @author Marlon Rojas Galindo
+ * Clase Libro que hereda de Producto<Integer>
  */
-public class Libro extends Producto{
-    private Integer numPaginas;
-    
-    public Libro(Integer numPaginas, String nombre, float precio, Object informacion) {
-        super(nombre, precio, informacion);
-        this.numPaginas = numPaginas;
+public class Libro extends Producto<Integer> {
+
+    /**
+     * Constructor de la clase Libro
+     * @param nombre Nombre del libro
+     * @param precio Precio del libro
+     * @param paginas Número de páginas
+     */
+    public Libro(String nombre, double precio, Integer paginas) {
+        super(nombre, precio, paginas);
     }
 
-    public Libro() {
-    }
-    
-    public Libro(Integer numPaginas) {
-        this.numPaginas = numPaginas;
-    }
-
-    public Integer getNumPaginas() {
-        return numPaginas;
-    }
-
-    public void setNumPaginas(Integer numPaginas) {
-        this.numPaginas = numPaginas;
-    }
-    
     @Override
     public void mostrarDetalles() {
-        System.out.println("Nombre: " + super.getNombre());
-        System.out.println("Precio: " + super.getPrecio());
-        System.out.println("Paginas: " + this.getNumPaginas());
+        System.out.println("Libro: " + getNombre() + 
+                           " | Precio: $" + getPrecio() + 
+                           " | Páginas: " + getExtra());
     }
 }
