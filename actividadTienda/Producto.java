@@ -1,51 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package poo.actividadTienda;
-
 /**
- *
- * @author Marlon Rojas Galindo
+ * Clase abstracta Producto
+ * @param <T> Tipo Genérico para información extra
  */
 public abstract class Producto<T> {
-    //Atributos
-    private String nombre;
-    private float precio;
-    private T informacion;
+    private String nombre;   // nombre del producto
+    private double precio;   // precio del producto
+    private T extra;         // información adicional de tipo genérico
 
-    public Producto() {
-    }
-
-    public Producto(String nombre, float precio, T informacion) {
+    /**
+     * Constructor
+     * @param nombre Nombre del producto
+     * @param precio Precio del producto
+     * @param extra  Información Extra
+     */
+    public Producto(String nombre, double precio, T extra) {
         this.nombre = nombre;
         this.precio = precio;
-        this.informacion = informacion;
+        this.extra = extra;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    // Métodos de acceso
+    public String getNombre() { return nombre; }
+    public double getPrecio() { return precio; }
+    public T getExtra() { return extra; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public float getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
-
-    public T getInformacion() {
-        return informacion;
-    }
-
-    public void setInformacion(T informacion) {
-        this.informacion = informacion;
-    }
-    
+    // Método abstracto que cada subclase debe implementar
     public abstract void mostrarDetalles();
 }
